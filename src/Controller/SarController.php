@@ -23,5 +23,4 @@ class SarController extends AbstractController
     {
         return $this->render('sar/home.html.twig');
     }
-    // Gaye est entrain de coder
 }

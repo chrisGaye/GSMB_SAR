@@ -1,5 +1,12 @@
 {% extends "base.html.twig" %}
 
 {% block body %}
-    <p>Nous respectons le codage</p>
+    <!-- Page de connexion -->
+
+    <form action="" method="post">
+        <input type="text" name="username" id="" placeholder="Nom d'utilisateur">
+        <input type="password" name="password" id="" placeholder="Mot de passe">      
+        <input type="reset" value="ANNULER">
+        <button type="submit" name="valider">SE CONNECTER</button>
+    </form>
 {% endblock body %}
