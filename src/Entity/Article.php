@@ -5,49 +5,57 @@ namespace App\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\ArticleRepository")
+ * Article
+ *
+ * @ORM\Table(name="article")
+ * @ORM\Entity
  */
 class Article
 {
     /**
-     * @ORM\Id()
-     * @ORM\GeneratedValue()
-     * @ORM\Column(type="integer")
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer", nullable=false)
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @var string
+     *
+     * @ORM\Column(name="nom", type="string", length=255, nullable=false)
      */
     private $nom;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @var string
+     *
+     * @ORM\Column(name="designation", type="string", length=255, nullable=false)
      */
     private $designation;
 
     /**
-     * @ORM\Column(type="integer")
+     * @var int
+     *
+     * @ORM\Column(name="quantite", type="integer", nullable=false)
      */
     private $quantite;
+
     /**
-     * @ORM\Column(type="date")
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date_atricle", type="datetime", nullable=false)
      */
     private $dateAtricle;
 
     /**
      * @var boolean
-     * 
+     *
      * @ORM\Column(name="estLivre", type="boolean")
      */
     private $estLivre=true;
-
-    //Foncction pour generer automatiquement une date lorsqu'un article est créé:
-    public function __construct()
-    {
-       $this-> dateAtricle=new \DateTime('nom');
-    }
-
+    
     public function getId(): ?int
     {
         return $this->id;
@@ -100,4 +108,18 @@ class Article
 
         return $this;
     }
+
+    public function getEstLivre(): ?bool
+    {
+        return $this->estLivre;
+    }
+
+    public function setEstLivre(bool $estLivre): self
+    {
+        $this->estLivre = $estLivre;
+
+        return $this;
+    }
+
+
 }

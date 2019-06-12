@@ -4,8 +4,21 @@
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
+        
+        <link rel="stylesheet" href="https://bootswatch.com/4/flatly/bootstrap.min.css">
+        <style>
+           .stock{
+             font-weight: 70px;
+             font-size: 30px;
+           }
+           .gest{
+               padding-left: 30px;
+           }
+        </style>
     </head>
     <body>
+      <marquee behavior="" direction=""><p class="stock">Gestion du Stock des Matériels de Bureau de la SAR</p></marquee>
+      
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>

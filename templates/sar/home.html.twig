@@ -1,12 +1,27 @@
 {% extends "base.html.twig" %}
 
+
+{% block link %}
+<link rel="stylesheet" href="cssAccueil.css">
+<style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;  
+            background: #34495e;
+          }
+</style>  
+{% endblock link %}
+
 {% block body %}
     <!-- Page de connexion -->
 
-    <form action="" method="post">
+    <form action="" method="post" class="box">
+        <h1>Portail de Connexion</h1>
+         <img src="{{ asset('GSMB_SAR\templates\sar') }}" alt="" title="logo_SAR" alt="logo_SAR">
         <input type="text" name="username" id="" placeholder="Nom d'utilisateur">
         <input type="password" name="password" id="" placeholder="Mot de passe">      
         <input type="reset" value="ANNULER">
-        <button type="submit" name="valider">SE CONNECTER</button>
+        <input type="submit" value="SE CONNECTER">
     </form>
 {% endblock body %}
